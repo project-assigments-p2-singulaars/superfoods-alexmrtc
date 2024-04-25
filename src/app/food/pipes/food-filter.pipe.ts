@@ -11,7 +11,11 @@ export class FoodFilterPipe implements PipeTransform {
 
     if (!searchText) return foods;
 
-    return foods.filter((food) => food.name.includes(searchText));
+    return foods.filter((food) => {
+      const parsedName = food.name.toLowerCase().trim();
+
+      return parsedName.includes(searchText.toLowerCase().trim())
+    });
   }
 
 }
