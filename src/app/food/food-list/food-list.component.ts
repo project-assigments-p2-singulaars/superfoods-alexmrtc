@@ -1,16 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Foods } from '../../shared/interfaces/foods';
 import { FoodService } from '../food.service';
+import { FoodFilterPipe } from '../pipes/food-filter.pipe';
+import { NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-food-list',
   standalone: true,
-  imports: [],
+  imports: [FoodFilterPipe],
   templateUrl: './food-list.component.html',
   styleUrl: './food-list.component.scss'
 })
 export class FoodListComponent implements OnInit{
-  food!:Foods[]; 
+  food!:Foods[];
+
+  // searchText!:string
+  searchText = "s"
 
   constructor(private foodsService: FoodService){}
 

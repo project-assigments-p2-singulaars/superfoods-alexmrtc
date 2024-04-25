@@ -2,11 +2,11 @@
   grid-area: foodList;
 
   gap: 1rem;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.foodElementContainer{
+.foodElementContainer {
   display: flex;
   // border: .2rem black solid;
   gap: 2rem;
@@ -22,7 +22,7 @@
   width: 20rem;
 }
 
-.foodInformationContainer{
+.foodInformationContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
