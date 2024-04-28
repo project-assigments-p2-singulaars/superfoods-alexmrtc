@@ -1,0 +1,16 @@
+<div id="foodContainer">
+  @for (foodElement of food | foodFilter: searchText; track foodElement.id) {
+    <div id=`{{foodElement.name}}Container` class="foodElementContainer">
+      <img src={{foodElement.image}} class="foodImage">
+      <div class="foodInformationContainer">
+        <h3>{{foodElement.name}}</h3>
+        <p>Calories: {{foodElement.calories}}</p>
+
+        <div>
+          <button>+</button>
+          <input type="text" value={{foodElement.quantity}}>
+        </div>
+      </div>
+    </div>
+  }
+</div>

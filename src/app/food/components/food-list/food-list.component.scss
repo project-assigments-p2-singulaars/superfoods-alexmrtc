@@ -1,0 +1,34 @@
+#searBarContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+#foodContainer {
+  // grid-area: foodList;
+
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.foodElementContainer {
+  display: flex;
+  // border: .2rem black solid;
+  gap: 2rem;
+}
+
+.foodElementContainer img {
+  border: .5rem black solid;
+  border-radius: 1.5rem
+}
+
+.foodImage {
+  height: 20rem;
+  width: 20rem;
+}
+
+.foodInformationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
