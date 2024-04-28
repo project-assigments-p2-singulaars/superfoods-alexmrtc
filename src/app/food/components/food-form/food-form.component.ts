@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Foods } from '../../shared/interfaces/foods';
-import { FoodService } from '../food.service';
+import { Foods } from '../../../shared/interfaces/foods';
+import { FoodService } from '../../services/food.service';
 
 @Component({
   selector: 'app-food-form',
@@ -12,6 +12,7 @@ import { FoodService } from '../food.service';
 })
 export class FoodFormComponent implements OnInit {
   isShown = false;
+  @Output() formSent = new EventEmitter();
 
   constructor (private foodService: FoodService){}
 
@@ -39,7 +40,8 @@ export class FoodFormComponent implements OnInit {
       image: foodForm.controls['foodImageUrl'].value,
       quantity: 0
     }
-    console.log(food)
+
+    this.formSent.emit(food)
     foodForm.resetForm();
 
     this.reverseFormDisplay();
