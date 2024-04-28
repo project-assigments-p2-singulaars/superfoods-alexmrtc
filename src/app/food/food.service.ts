@@ -10,4 +10,8 @@ export class FoodService {
   getAllFood(){
     return foods;
   }
+
+  getLastId(){
+    return foods.at(-1)!.id
+  }
 }

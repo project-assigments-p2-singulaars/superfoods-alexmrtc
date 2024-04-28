@@ -1,3 +1,8 @@
+#searBarContainer{
+  display: flex;
+  flex-direction: column;
+}
+
 #foodContainer {
   grid-area: foodList;
 
