@@ -1,6 +1,3 @@
-<label for="search-text">Search Text</label>
-<input type="text" [(ngModel)]="searchText" value="" name="search-text">
-
 <div id="foodContainer">
   @for (foodElement of food | foodFilter: searchText; track foodElement.id) {
     <div id=`{{foodElement.name}}Container` class="foodElementContainer">
