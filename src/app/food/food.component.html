@@ -4,4 +4,4 @@
 </div>
 
 <app-food-form (formSent)="registerFood($event)"></app-food-form>
-<app-food-list [food]="food" [searchText]="searchText"></app-food-list>
+<app-food-list [food]="food" [searchText]="searchText" (todayDishSent)="sendToTodayMeal($event)"></app-food-list>

@@ -7,8 +7,9 @@
         <p>Calories: {{foodElement.calories}}</p>
 
         <div>
-          <button>+</button>
-          <input type="text" value={{foodElement.quantity}}>
+          <button (click)="addToMeal(foodElement)">+</button>
+          <input type="text" value=1 >
+          <!-- <input type="text" value=1 name="foodQuantity" #foodQuantity="ngModel" ngModel> -->
         </div>
       </div>
     </div>

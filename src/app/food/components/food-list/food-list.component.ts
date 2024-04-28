@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Foods } from '../../../shared/interfaces/foods';
 import { FoodService } from '../../services/food.service';
 import { FoodFilterPipe } from '../../pipes/food-filter.pipe';
@@ -15,4 +15,14 @@ import { FoodFormComponent } from '../food-form/food-form.component';
 export class FoodListComponent{
   @Input() food!:Foods[];
   @Input() searchText!:string;
+  @Output() todayDishSent = new EventEmitter();
+
+  quantity:number = 1;
+
+  addToMeal(dish: Foods){
+    const selectedDish = {...dish, quantity: this.quantity}
+    console.log(selectedDish)
+    this.todayDishSent.emit(selectedDish)
+  }
+
 }
