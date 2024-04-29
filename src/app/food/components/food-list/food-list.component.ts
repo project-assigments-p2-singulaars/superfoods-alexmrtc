@@ -19,8 +19,8 @@ export class FoodListComponent{
 
   quantity:number = 1;
 
-  addToMeal(dish: Foods){
-    const selectedDish = {...dish, quantity: this.quantity}
+  addToMeal(dish: Foods, quantity:number){
+    const selectedDish = {...dish, quantity: quantity}
     console.log(selectedDish)
     this.todayDishSent.emit(selectedDish)
   }
