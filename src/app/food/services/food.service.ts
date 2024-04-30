@@ -19,4 +19,28 @@ export class FoodService {
   getLastId(){
     return foods.at(-1)!.id
   }
+
+  checkTodayMeal(food:Foods[], id:number){
+    return food.some((foodElement) => foodElement.id === id);
+  }
+
+  setNewFoodForToday(todayMeals: Foods[], dish: Foods) {
+    const isAlreadyAdded = this.checkTodayMeal(todayMeals, dish.id);
+
+    if(isAlreadyAdded){
+      console.log(typeof(todayMeals[dish.id -1].quantity))
+      console.log(typeof(dish.quantity))
+      todayMeals[dish.id -1].quantity += dish.quantity;
+    }else {
+      todayMeals.push(dish)
+    }
+  }
+
+  calculateTotalCalories(food:Foods[]) {
+    let totalCalories = 0;
+
+    food.map((dish) => totalCalories += (dish.calories * dish.quantity));
+
+    return totalCalories;
+  }
 }
