@@ -1,20 +1,28 @@
-#searBarContainer{
+:host {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+#searBarContainer {
   display: flex;
   flex-direction: column;
 }
 
 #foodContainer {
-  // grid-area: foodList;
-
   gap: 1rem;
   display: flex;
   flex-direction: column;
+  width: 75%;
+  background-color: #efead4;
 }
 
 .foodElementContainer {
   display: flex;
-  // border: .2rem black solid;
   gap: 2rem;
+  height: 15rem;
+  align-items: center;
+  border-bottom: #dcd7c7 .2rem solid;
 }
 
 .foodElementContainer img {
@@ -23,8 +31,9 @@
 }
 
 .foodImage {
-  height: 20rem;
-  width: 20rem;
+  height: 10rem;
+  width: 10rem;
+  margin-left: 2rem;
 }
 
 .foodInformationContainer {

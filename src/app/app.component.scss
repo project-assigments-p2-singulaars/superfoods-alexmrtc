@@ -1,7 +1,9 @@
 :host {
   display: grid;
-  grid-template-columns: 45vw 55vw;
-  grid-template-areas: "foodList todayCal";
+  grid-template-columns: 65vw 35vw;
+  grid-template-rows: 5vh auto;
+  grid-template-areas: ". ." "foodList todayCal";
+  background-color: #b4835a;
 }
 
 

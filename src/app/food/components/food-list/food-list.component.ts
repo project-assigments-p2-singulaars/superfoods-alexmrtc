@@ -17,11 +17,12 @@ export class FoodListComponent{
   @Input() searchText!:string;
   @Output() todayDishSent = new EventEmitter();
 
+  foodQuantity=1;
+
   quantity:number = 1;
 
-  addToMeal(dish: Foods, quantity:number){
-    const selectedDish = {...dish, quantity: quantity}
-    console.log(selectedDish)
+  addToMeal(dish: Foods){
+    const selectedDish = {...dish, quantity: this.foodQuantity}
     this.todayDishSent.emit(selectedDish)
   }
 

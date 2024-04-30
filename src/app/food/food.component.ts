@@ -25,7 +25,6 @@ export class FoodComponent {
   }
 
   sendToTodayMeal(food: Foods){
-    console.log(food)
     this.todayMealSent.emit(food);
   }
 
