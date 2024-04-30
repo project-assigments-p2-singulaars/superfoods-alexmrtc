@@ -41,7 +41,7 @@ export class FoodFormComponent implements OnInit {
       quantity: 0
     }
 
-    this.formSent.emit(food)
+    this.formSent.emit(food);
     foodForm.resetForm();
 
     this.reverseFormDisplay();
