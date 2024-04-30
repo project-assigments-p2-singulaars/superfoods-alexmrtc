@@ -1,3 +1,18 @@
 :host{
   grid-area: foodList;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#searBarContainer {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+#searBarContainer label{
+  font-weight: bold
 }
