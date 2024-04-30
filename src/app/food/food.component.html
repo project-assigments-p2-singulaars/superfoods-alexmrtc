@@ -1,0 +1,7 @@
+<div id="searBarContainer">
+  <label for="search-text">Search Text</label>
+  <input type="text" [(ngModel)]="searchText" value="" name="search-text">
+</div>
+
+<app-food-form (formSent)="registerFood($event)"></app-food-form>
+<app-food-list [food]="food" [searchText]="searchText" (todayDishSent)="sendToTodayMeal($event)"></app-food-list>

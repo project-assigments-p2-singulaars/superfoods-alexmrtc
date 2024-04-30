@@ -1,0 +1,16 @@
+<button (click)="reverseFormDisplay()">Add new food</button>
+<form id="addFoodForm" #foodForm="ngForm" (ngSubmit)="submit(foodForm)" ngNativeValidate >
+  <div class="inputField">
+    <label for="">Name: </label>
+    <input required type="text" name="foodName" #foodName="ngModel" ngModel>
+  </div>
+  <div class="inputField">
+    <label for="">Calories: </label>
+    <input required type="number" name="foodCalories" #foodCalories="ngModel" ngModel>
+  </div>
+  <div class="inputField">
+    <label for="">Image URL: </label>
+    <input required type="url" name="foodImageUrl" #foodImageUrl="ngModel" ngModel >
+  </div>
+  <input type="submit" value="Submit">
+</form>
