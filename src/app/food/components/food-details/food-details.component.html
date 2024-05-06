@@ -1,1 +1,12 @@
-<p>food-details works!</p>
+<li id=`{{foodElement.name}}Container` class="foodElementContainer">
+    <img src={{foodElement.image}} class="foodImage">
+    <div class="foodInformationContainer">
+      <h3>{{foodElement.name}}</h3>
+      <p>Calories: {{foodElement.calories}}</p>
+
+      <div>
+        <button (click)="addDishToMeal(foodElement)">+</button>
+        <input type="number" value=1 name="foodQuantity" [(ngModel)]="foodQuantity">
+      </div>
+    </div>
+  </li>

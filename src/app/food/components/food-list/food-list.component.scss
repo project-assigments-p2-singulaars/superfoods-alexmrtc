@@ -16,28 +16,3 @@
   width: 75%;
   background-color: #efead4;
 }
-
-.foodElementContainer {
-  display: flex;
-  gap: 2rem;
-  height: 15rem;
-  align-items: center;
-  border-bottom: #dcd7c7 .2rem solid;
-}
-
-.foodElementContainer img {
-  border: .5rem black solid;
-  border-radius: 1.5rem
-}
-
-.foodImage {
-  height: 10rem;
-  width: 10rem;
-  margin-left: 2rem;
-}
-
-.foodInformationContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
