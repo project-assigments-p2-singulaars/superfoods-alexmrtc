@@ -4,11 +4,12 @@ import { FoodService } from '../../services/food.service';
 import { FoodFilterPipe } from '../../pipes/food-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { FoodFormComponent } from '../food-form/food-form.component';
+import { FoodDetailsComponent } from '../food-details/food-details.component';
 
 @Component({
   selector: 'app-food-list',
   standalone: true,
-  imports: [FoodFilterPipe, FormsModule, FoodFormComponent],
+  imports: [FoodFilterPipe, FormsModule, FoodFormComponent, FoodDetailsComponent],
   templateUrl: './food-list.component.html',
   styleUrl: './food-list.component.scss'
 })
@@ -17,12 +18,9 @@ export class FoodListComponent{
   @Input() searchText!:string;
   @Output() todayDishSent = new EventEmitter();
 
-  foodQuantity=1;
-
-  quantity:number = 1;
 
   addToMeal(dish: Foods){
-    const selectedDish = {...dish, quantity: this.foodQuantity}
+    const selectedDish = {...dish, quantity: dish.quantity}
     this.todayDishSent.emit(selectedDish)
   }
 
