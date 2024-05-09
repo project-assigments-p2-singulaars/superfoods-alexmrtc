@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Foods } from '../shared/interfaces/foods';
+import { Food } from '../shared/interfaces/food';
 import { TodayMealListComponent } from './today-meal-list/today-meal-list.component';
 
 @Component({
@@ -10,6 +10,6 @@ import { TodayMealListComponent } from './today-meal-list/today-meal-list.compon
   styleUrl: './today-meal.component.scss'
 })
 export class TodayMealComponent {
-  @Input() selectedFood!:Foods[];
+  @Input() selectedFood!:Food[];
   @Input() totalCalories!:number;
 }

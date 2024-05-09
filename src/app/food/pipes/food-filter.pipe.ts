@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Foods } from '../../shared/interfaces/foods';
+import { Food } from '../../shared/interfaces/food';
 
 @Pipe({
   name: 'foodFilter',
   standalone: true
 })
 export class FoodFilterPipe implements PipeTransform {
-  transform(foods: Foods[], searchText: string): Foods[] {
+  transform(foods: Food[], searchText: string): Food[] {
     if (!foods) return [];
 
     if (!searchText) return foods;

@@ -1,6 +1,6 @@
-import { Foods } from "./src/app/shared/interfaces/foods";
+import { Food } from "./src/app/shared/interfaces/food";
 
-const foods: Foods [] = [
+const foods: Food [] = [
     {
       id: 1,
       name: "Pizza",

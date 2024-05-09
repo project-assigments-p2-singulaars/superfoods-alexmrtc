@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FoodFormComponent } from './components/food-form/food-form.component';
 import { FoodListComponent } from './components/food-list/food-list.component';
-import { Foods } from '../shared/interfaces/foods';
+import { Food } from '../shared/interfaces/food';
 import { FoodService } from './services/food.service';
 import { FormsModule } from '@angular/forms';
 
@@ -16,7 +16,7 @@ export class FoodComponent {
   @Output() todayMealSent = new EventEmitter();
 
   searchText!:string;
-  food!:Foods[];
+  food!:Food[];
 
   constructor(private foodsService: FoodService){}
 
@@ -24,11 +24,11 @@ export class FoodComponent {
     this.food = this.foodsService.getAllFood();
   }
 
-  sendToTodayMeal(food: Foods){
+  sendToTodayMeal(food: Food){
     this.todayMealSent.emit(food);
   }
 
-  registerFood(food: Foods){
+  registerFood(food: Food){
     this.foodsService.addNewFood(food);
   }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TodayMealComponent } from './today-meal/today-meal.component';
 import { FoodComponent } from './food/food.component';
-import { Foods } from './shared/interfaces/foods';
+import { Food } from './shared/interfaces/food';
 import { FoodService } from './food/services/food.service';
 
 @Component({
@@ -15,11 +15,11 @@ import { FoodService } from './food/services/food.service';
 export class AppComponent {
   title = 'superfoods';
   totalCalories= 0;
-  selectedFood: Foods[] = [];
+  selectedFood: Food[] = [];
 
   constructor (private foodService: FoodService){}
 
-  addToTodayMeal (dish: Foods) {
+  addToTodayMeal (dish: Food) {
     this.foodService.setNewFoodForToday(this.selectedFood, dish);
 
     console.log(this.selectedFood)

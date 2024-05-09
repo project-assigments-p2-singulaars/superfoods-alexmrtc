@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import foods from '../../../../foods';
-import { Foods } from '../../shared/interfaces/foods';
+import { Food } from '../../shared/interfaces/food';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class FoodService {
     return foods;
   }
 
-  addNewFood(food: Foods){
+  addNewFood(food: Food){
     foods.push(food);
   }
 
@@ -20,11 +20,11 @@ export class FoodService {
     return foods.at(-1)!.id
   }
 
-  checkTodayMeal(food:Foods[], id:number){
+  checkTodayMeal(food:Food[], id:number){
     return food.some((foodElement) => foodElement.id === id);
   }
 
-  setNewFoodForToday(todayMeals: Foods[], dish: Foods) {
+  setNewFoodForToday(todayMeals: Food[], dish: Food) {
     const isAlreadyAdded = this.checkTodayMeal(todayMeals, dish.id);
 
     if(isAlreadyAdded){
@@ -36,7 +36,7 @@ export class FoodService {
     }
   }
 
-  calculateTotalCalories(food:Foods[]) {
+  calculateTotalCalories(food:Food[]) {
     let totalCalories = 0;
 
     food.map((dish) => totalCalories += (dish.calories * dish.quantity));

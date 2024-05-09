@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { Foods } from '../../../shared/interfaces/foods';
+import { Food } from '../../../shared/interfaces/food';
 import { FoodService } from '../../services/food.service';
 
 @Component({
@@ -33,7 +33,7 @@ export class FoodFormComponent implements OnInit {
   }
 
   submit (foodForm: NgForm){
-    const food: Foods = {
+    const food: Food = {
       id: this.foodService.getLastId() + 1,
       name: foodForm.controls['foodName'].value,
       calories: foodForm.controls['foodCalories'].value,
