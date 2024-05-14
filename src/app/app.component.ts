@@ -4,11 +4,12 @@ import { TodayMealComponent } from './today-meal/today-meal.component';
 import { FoodComponent } from './food/food.component';
 import { Food } from './shared/interfaces/food';
 import { FoodService } from './shared/services/food.service';
+import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FoodComponent, TodayMealComponent],
+  imports: [RouterOutlet, FoodComponent, TodayMealComponent, SearchComponent  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

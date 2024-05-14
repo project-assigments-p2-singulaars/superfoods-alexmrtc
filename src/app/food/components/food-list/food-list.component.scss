@@ -12,7 +12,8 @@
 #foodContainer {
   gap: 1rem;
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   width: 75%;
-  background-color: #efead4;
+  // background-color: #efead4;
+  flex-wrap: wrap;
 }

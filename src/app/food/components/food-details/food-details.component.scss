@@ -1,3 +1,7 @@
+:host{
+    width: 45%;
+}
+
 #foodContainer {
     gap: 1rem;
     display: flex;
@@ -7,16 +11,14 @@
 }
 
 .foodElementContainer {
+    width: 100%;
     display: flex;
     gap: 2rem;
-    height: 15rem;
     align-items: center;
-    border-bottom: #dcd7c7 .2rem solid;
 }
 
 .foodElementContainer img {
-    border: .5rem black solid;
-    border-radius: 1.5rem
+    border-radius: 0.5rem
 }
 
 .foodImage {
@@ -28,5 +30,24 @@
 .foodInformationContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+.foodImageContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.example-card{
+    background-color: #dcdcdc;
+}
+
+.mdc-card__media{
+    object-fit: inherit;
+    height: 15rem;
+    width: 15rem;
+} 
+
+.mdc-card__actions {
     justify-content: center;
 }
