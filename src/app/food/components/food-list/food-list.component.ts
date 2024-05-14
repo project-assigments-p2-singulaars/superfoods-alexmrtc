@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Food } from '../../../shared/interfaces/food';
-import { FoodService } from '../../services/food.service';
+import { FoodService } from '../../../shared/services/food.service';
 import { FoodFilterPipe } from '../../pipes/food-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { FoodFormComponent } from '../food-form/food-form.component';

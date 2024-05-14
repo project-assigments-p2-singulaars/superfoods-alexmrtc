@@ -1,7 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Food } from '../../../shared/interfaces/food';
-import { FoodService } from '../../services/food.service';
+import { FoodService } from '../../../shared/services/food.service';
 
 @Component({
   selector: 'app-food-form',
