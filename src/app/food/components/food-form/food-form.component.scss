@@ -8,6 +8,7 @@ form {
   display: flex;
   flex-direction: column;
   width: 75%;
+  overflow: hidden;
 }
 
 .hide {
@@ -16,4 +17,13 @@ form {
 
 label {
   font-weight: bold;
+}
+
+button {
+  background-color: #7272f1
+}
+
+#inputContainer {
+  display: flex;
+  gap: 0.1rem;
 }

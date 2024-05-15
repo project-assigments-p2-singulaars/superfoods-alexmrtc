@@ -1,5 +1,5 @@
 <ul id="foodContainer">
-  @for (foodElement of food | foodFilter: searchText; track foodElement.id) {
+  @for (foodElement of food | foodFilter: searchText(); track foodElement.id) {
     <app-food-details [foodElement]="foodElement" (sendDish)="addToMeal($event)"></app-food-details>
   }
 </ul>

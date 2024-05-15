@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import foods from '../../../../foods';
 import { Food } from '../interfaces/food';
 
@@ -6,7 +6,7 @@ import { Food } from '../interfaces/food';
   providedIn: 'root'
 })
 export class FoodService {
-  constructor() { }
+  searchText = signal('');
 
   getAllFood(){
     return foods;

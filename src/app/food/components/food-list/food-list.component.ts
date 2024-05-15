@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
 import { Food } from '../../../shared/interfaces/food';
 import { FoodService } from '../../../shared/services/food.service';
 import { FoodFilterPipe } from '../../pipes/food-filter.pipe';
@@ -14,8 +14,11 @@ import { FoodDetailsComponent } from '../food-details/food-details.component';
   styleUrl: './food-list.component.scss'
 })
 export class FoodListComponent{
+  private foodService = inject(FoodService);
   @Input() food!:Food[];
-  @Input() searchText!:string;
+  // @Input() searchText!:string;
+
+  searchText = this.foodService.searchText;
   @Output() todayDishSent = new EventEmitter();
 
 
