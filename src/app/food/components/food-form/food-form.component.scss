@@ -1,0 +1,29 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  background-color: #7272f1
+}
+
+#inputContainer {
+  display: flex;
+  gap: 0.1rem;
+}

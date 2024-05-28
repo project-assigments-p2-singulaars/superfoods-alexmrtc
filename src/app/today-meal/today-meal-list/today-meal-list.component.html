@@ -1,0 +1,5 @@
+<ul>
+  @for (selectedFoodElement of selectedFood; track selectedFoodElement.id){
+    <app-today-meal-details [todayFood]="selectedFoodElement"></app-today-meal-details>
+  }
+</ul>
