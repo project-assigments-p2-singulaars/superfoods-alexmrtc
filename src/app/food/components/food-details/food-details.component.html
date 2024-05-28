@@ -1,12 +1,17 @@
 <li id=`{{foodElement.name}}Container` class="foodElementContainer">
-    <img src={{foodElement.image}} class="foodImage">
-    <div class="foodInformationContainer">
-      <h3>{{foodElement.name}}</h3>
-      <p>Calories: {{foodElement.calories}}</p>
-
-      <div>
-        <button (click)="addDishToMeal(foodElement)">+</button>
-        <input type="number" value=1 name="foodQuantity" [(ngModel)]="foodQuantity">
-      </div>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{foodElement.name}}</mat-card-title>
+      <mat-card-subtitle>Calories: {{foodElement.calories}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="foodImageContainer">
+      <img mat-card-image src={{foodElement.image}} alt="Photo of a {{foodElement.name}}">
     </div>
-  </li>
+
+    <mat-card-actions>
+      <button mat-button (click)="addDishToMeal(foodElement)">Add to menu</button>
+      <input type="number" value=1 name="foodQuantity" [(ngModel)]="foodQuantity">
+    </mat-card-actions>
+  </mat-card>
+</li>

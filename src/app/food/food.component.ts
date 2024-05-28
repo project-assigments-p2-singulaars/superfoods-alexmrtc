@@ -1,9 +1,10 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
 import { FoodFormComponent } from './components/food-form/food-form.component';
 import { FoodListComponent } from './components/food-list/food-list.component';
-import { Foods } from '../shared/interfaces/foods';
-import { FoodService } from './services/food.service';
+import { Food } from '../shared/interfaces/food';
+import { FoodService } from '../shared/services/food.service';
 import { FormsModule } from '@angular/forms';
+import { MenuService } from '../shared/services/menu.service';
 
 @Component({
   selector: 'app-food',
@@ -14,9 +15,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class FoodComponent {
   @Output() todayMealSent = new EventEmitter();
+  private menuService = inject(MenuService);
 
   searchText!:string;
-  food!:Foods[];
+  food!:Food[];
 
   constructor(private foodsService: FoodService){}
 
@@ -24,11 +26,11 @@ export class FoodComponent {
     this.food = this.foodsService.getAllFood();
   }
 
-  sendToTodayMeal(food: Foods){
-    this.todayMealSent.emit(food);
+  sendToTodayMeal(food: Food){
+    this.menuService.addToMenu(food);
   }
 
-  registerFood(food: Foods){
+  registerFood(food: Food){
     this.foodsService.addNewFood(food);
   }
 }
