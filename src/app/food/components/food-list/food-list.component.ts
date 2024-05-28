@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Foods } from '../../../shared/interfaces/foods';
-import { FoodService } from '../../services/food.service';
+import { Component, EventEmitter, Input, OnInit, Output, inject } from '@angular/core';
+import { Food } from '../../../shared/interfaces/food';
+import { FoodService } from '../../../shared/services/food.service';
 import { FoodFilterPipe } from '../../pipes/food-filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { FoodFormComponent } from '../food-form/food-form.component';
@@ -14,12 +14,15 @@ import { FoodDetailsComponent } from '../food-details/food-details.component';
   styleUrl: './food-list.component.scss'
 })
 export class FoodListComponent{
-  @Input() food!:Foods[];
-  @Input() searchText!:string;
+  private foodService = inject(FoodService);
+  @Input() food!:Food[];
+  // @Input() searchText!:string;
+
+  searchText = this.foodService.searchText;
   @Output() todayDishSent = new EventEmitter();
 
 
-  addToMeal(dish: Foods){
+  addToMeal(dish: Food){
     const selectedDish = {...dish, quantity: dish.quantity}
     this.todayDishSent.emit(selectedDish)
   }

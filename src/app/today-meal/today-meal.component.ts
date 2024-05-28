@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
-import { Foods } from '../shared/interfaces/foods';
+import { Component, Input, computed, inject } from '@angular/core';
+import { Food } from '../shared/interfaces/food';
 import { TodayMealListComponent } from './today-meal-list/today-meal-list.component';
+import { MenuService } from '../shared/services/menu.service';
 
 @Component({
   selector: 'app-today-meal',
@@ -10,6 +11,10 @@ import { TodayMealListComponent } from './today-meal-list/today-meal-list.compon
   styleUrl: './today-meal.component.scss'
 })
 export class TodayMealComponent {
-  @Input() selectedFood!:Foods[];
-  @Input() totalCalories!:number;
+  private menuService = inject(MenuService);
+  menu = this.menuService.menu;
+
+  @Input() selectedFood!:Food[];
+
+  totalCalories = computed(() => this.menu().reduce((accumulator, currentValue) => accumulator + (currentValue.calories * currentValue.quantity), 0))
 }

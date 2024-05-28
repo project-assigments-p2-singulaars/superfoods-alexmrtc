@@ -1,3 +1,14 @@
 <li>
-  <p>{{todayFood.name}} {{todayFood.calories}} x{{todayFood.quantity}}</p>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title>{{todayFood.name}}</mat-card-title>
+        <mat-card-subtitle>Quantity: {{todayFood.quantity}}</mat-card-subtitle>
+        <img mat-card-md-image src={{todayFood.image}} >
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      Each {{todayFood.name}} contains {{todayFood.calories}} calories
+    </mat-card-content>
+  </mat-card>
 </li>
