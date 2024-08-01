@@ -1,0 +1,53 @@
+:host{
+    width: 45%;
+}
+
+#foodContainer {
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    background-color: #efead4;
+}
+
+.foodElementContainer {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.foodElementContainer img {
+    border-radius: 0.5rem
+}
+
+.foodImage {
+    height: 10rem;
+    width: 10rem;
+    margin-left: 2rem;
+}
+
+.foodInformationContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.foodImageContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.example-card{
+    background-color: #dcdcdc;
+}
+
+.mdc-card__media{
+    object-fit: inherit;
+    height: 15rem;
+    width: 15rem;
+} 
+
+.mdc-card__actions {
+    justify-content: center;
+}

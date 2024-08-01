@@ -1,0 +1,19 @@
+:host {
+    grid-area: todayCal;
+}
+
+#todayMealContainer{
+    background-color: #dcdcdc;
+    width: 75%;
+}
+
+#todayMealContainer h2 {
+    font-weight: bold;
+}
+
+h2 {
+    height: 3rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-bottom: 0.2rem solid black;
+}
